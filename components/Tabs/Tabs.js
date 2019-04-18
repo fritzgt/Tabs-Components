@@ -26,21 +26,26 @@ class TabLink {
     // Add a class named "tabs-link-selected" to this link
     this.element.classList.add("tabs-link-selected");
     // Call the select method on the item associated with this link
+    this.tabItem.select();
   }
 }
 
 class TabItem {
   constructor(element) {
     // Assign this.element to the passed in element
-    // this.element;
+    this.element = element;
   }
 
   select() {
     // Select all ".tabs-item" elements from the DOM
-    // const items;
+    const items = document.querySelectorAll(".tabs-item");
     // Remove the class "tabs-item-selected" from each element
+    Array.from(items).forEach(element =>
+      element.classList.remove("tabs-item-selected")
+    );
+    // console.log(items);
     // Add a class named "tabs-item-selected" to this element
-    //this.element;
+    this.element.classList.add("tabs-item-selected");
   }
 }
 
